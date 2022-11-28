@@ -1,9 +1,22 @@
-import Condition from "./Condition";
+export const addTodo = (data) =>{
+    return{
+        type: "ADD_TODO",
+        payload:{
+            id: new Date().getTime().toString(),
+            data: data
+        }
+    }
+}
 
-import {combineReducers} from 'redux'
+export const deleteTodo = (id) =>{
+    return{
+        type: "DELETE_TODO",
+        id
+    }
+}
 
-const rootReducer = combineReducers({
-    Condition
-})
-
-export default rootReducer;
+export const removeTodo = () =>{
+    return{
+        type: "REMOVE_TODO"
+    }
+}
